@@ -8,13 +8,15 @@ public class DTOMorgue
     public int ID { get; set; }
     public string Name { get; set; }
     public string Latitude { get; set; }
-    public string Longtitude { get; set; }
-    public string TotalBodies { get; set; }
-    public string TotalMale { get; set; }
-    public string TotalFemale { get; set; }
-    public string TotalTeen { get; set; }
-    public string TotalAdult { get; set; }
-    public string TotalChild { get; set; }
+    public string Longitude { get; set; }
+    public int TotalBodies { get; set; }
+    public int TotalMales { get; set; }
+    public int TotalFemales { get; set; }
+    public int TotalTeens { get; set; }
+    public int TotalAdults { get; set; }
+    public int TotalChilds { get; set; }
+    public int TotalIdentified { get; set; }
+    public int TotalUnidentified { get; set; }
     public string ContactNumber { get; set; }
     public DTOPersonList PersonList { get; set; }
 
