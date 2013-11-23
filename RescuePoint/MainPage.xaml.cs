@@ -22,6 +22,30 @@ namespace RescuePoint
             //BuildLocalizedApplicationBar();
         }
 
+        private void imgEvac_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            //Transfer to page Evacuation
+            NavigationService.Navigate(new Uri("/View/Evacuation.xaml", UriKind.Relative));
+        }
+
+        private void imgSearch_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            //Transfer to page Search Person
+            NavigationService.Navigate(new Uri("/View/SearchPerson.xaml", UriKind.Relative));
+        }
+
+        private void imgDonor_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            //Transfer to page Donations
+            NavigationService.Navigate(new Uri("/View/Donations.xaml", UriKind.Relative));
+        }
+
+        private void imgVol_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            //Transfer to page Volunteers
+            NavigationService.Navigate(new Uri("/View/Volunteers.xaml", UriKind.Relative));
+        }
+
         // Sample code for building a localized ApplicationBar
         //private void BuildLocalizedApplicationBar()
         //{
