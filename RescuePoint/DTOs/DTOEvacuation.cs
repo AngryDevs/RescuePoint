@@ -7,7 +7,7 @@ public class DTOEvacuation
 {
     public int ID { get; set; }
     public string Name { get; set; }
-    public string Longtitude { get; set; }
+    public string Longitude { get; set; }
     public string Latitude { get; set; }
     public int CurrentPeople { get; set; }
     public int MaxPeople { get; set; }

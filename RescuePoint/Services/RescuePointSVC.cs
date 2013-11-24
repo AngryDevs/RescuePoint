@@ -36,8 +36,5 @@ namespace RescuePoint.Services
                 throw ex;
             }
         }
-
-
-
     }
 }

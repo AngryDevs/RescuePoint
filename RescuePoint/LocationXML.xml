@@ -1,0 +1,265 @@
+<Location>
+  <ListOfEvacuation>
+    <Evacuation>
+      <ID>1</ID>
+      <Name>Evacuation 1</Name>
+      <PointPerson>Juan Dela Cruz</PointPerson>
+      <ContactNumber>234 27 30</ContactNumber>
+      <Longitude>125.610943</Longitude>
+      <Latitude>7.072764</Latitude>
+      <CurrentPeople>70</CurrentPeople>
+      <MaxPeople>100</MaxPeople>
+      <FoodSupply>5</FoodSupply>
+      <WaterSupply>5</WaterSupply>
+      <MedicineSupply>2</MedicineSupply>
+    </Evacuation>
+    <Evacuation>
+      <ID>2</ID>
+      <Name>Evacuation 2</Name>
+      <PointPerson>Juan Dela Cruz Jr</PointPerson>
+      <ContactNumber>234 27 31</ContactNumber>
+      <Longitude>125.607102</Longitude>
+      <Latitude>7.071449</Latitude>
+      <CurrentPeople>70</CurrentPeople>
+      <MaxPeople>100</MaxPeople>
+      <FoodSupply>5</FoodSupply>
+      <WaterSupply>5</WaterSupply>
+      <MedicineSupply>2</MedicineSupply>
+    </Evacuation>
+    <Evacuation>
+      <ID>3</ID>
+      <Name>Evacuation 3</Name>
+      <PointPerson>Juan Dela Cruz III</PointPerson>
+      <ContactNumber>234 27 32</ContactNumber>
+      <Longitude>125.603062</Longitude>
+      <Latitude>7.06974</Latitude>
+      <CurrentPeople>70</CurrentPeople>
+      <MaxPeople>100</MaxPeople>
+      <FoodSupply>5</FoodSupply>
+      <WaterSupply>5</WaterSupply>
+      <MedicineSupply>2</MedicineSupply>
+    </Evacuation>
+    <Evacuation>
+      <ID>4</ID>
+      <Name>Evacuation 4</Name>
+      <PointPerson>Juan Dela Cruz IV</PointPerson>
+      <ContactNumber>234 27 33</ContactNumber>
+      <Longitude>121.014612</Longitude>
+      <Latitude>14.559202</Latitude>
+      <CurrentPeople>70</CurrentPeople>
+      <MaxPeople>100</MaxPeople>
+      <FoodSupply>14</FoodSupply>
+      <WaterSupply>5</WaterSupply>
+      <MedicineSupply>10</MedicineSupply>
+    </Evacuation>
+  </ListOfEvacuation>
+  <ListOfMorgue>
+    <Morgue>
+      <ID>1</ID>
+      <Name>Morgue 1</Name>
+      <ContactNumber>123</ContactNumber>
+      <Latitude>7.07287</Latitude>
+      <Longitude>125.606033</Longitude>
+      <TotalBodies>4</TotalBodies>
+      <TotalMale>2</TotalMale>
+      <TotalFemale>2</TotalFemale>
+      <TotalTeen>1</TotalTeen>
+      <TotalChild>1</TotalChild>
+      <TotalAdult>2</TotalAdult>
+      <TotalIdentified>3</TotalIdentified>
+      <TotalUnIdentified>1</TotalUnIdentified>
+      <Person>
+        <ID>1</ID>
+        <Identified>false</Identified>
+        <Name>NULL</Name>
+        <Gender>Male</Gender>
+        <AgeBracket>Adult</AgeBracket>
+      </Person>
+      <Person>
+        <ID>2</ID>
+        <Identified>true</Identified>
+        <Name>Jane Doe</Name>
+        <Gender>Female</Gender>
+        <AgeBracket>Adult</AgeBracket>
+      </Person>
+      <Person>
+        <ID>3</ID>
+        <Identified>true</Identified>
+        <Name>John Doe Jr</Name>
+        <Gender>Male</Gender>
+        <AgeBracket>Child</AgeBracket>
+      </Person>
+      <Person>
+        <ID>4</ID>
+        <Identified>true</Identified>
+        <Name>Mary Jane Doe</Name>
+        <Gender>Female</Gender>
+        <AgeBracket>Teen</AgeBracket>
+      </Person>
+    </Morgue>
+    <Morgue>
+      <ID>2</ID>
+      <Name>Morgue 2</Name>
+      <ContactNumber>12</ContactNumber>
+      <Latitude>7.082043</Latitude>
+      <Longitude>125.611382</Longitude>
+      <TotalBodies>5</TotalBodies>
+      <TotalMale>2</TotalMale>
+      <TotalFemale>3</TotalFemale>
+      <TotalTeen>1</TotalTeen>
+      <TotalChild>1</TotalChild>
+      <TotalAdult>3</TotalAdult>
+      <TotalIdentified>5</TotalIdentified>
+      <TotalUnIdentified>0</TotalUnIdentified>
+      <Person>
+        <ID>1</ID>
+        <Name>John Smith</Name>
+        <Identified>true</Identified>
+        <Gender>Male</Gender>
+        <AgeBracket>Adult</AgeBracket>
+      </Person>
+      <Person>
+        <ID>2</ID>
+        <Name>Jane Smith</Name>
+        <Identified>true</Identified>
+        <Gender>Female</Gender>
+        <AgeBracket>Adult</AgeBracket>
+      </Person>
+      <Person>
+        <ID>3</ID>
+        <Name>John Smith Jr</Name>
+        <Identified>true</Identified>
+        <Gender>Male</Gender>
+        <AgeBracket>Child</AgeBracket>
+      </Person>
+      <Person>
+        <ID>4</ID>
+        <Name>Mary Jane Smith</Name>
+        <Identified>true</Identified>
+        <Gender>Female</Gender>
+        <AgeBracket>Teen</AgeBracket>
+      </Person>
+      <Person>
+        <ID>5</ID>
+        <Name>Janet Smith</Name>
+        <Identified>true</Identified>
+        <Gender>Female</Gender>
+        <AgeBracket>Adult</AgeBracket>
+      </Person>
+    </Morgue>
+    <Morgue>
+      <ID>3</ID>
+      <Name>Morgue 3</Name>
+      <ContactNumber>3</ContactNumber>
+      <Latitude>13</Latitude>
+      <Longitude>13</Longitude>
+      <TotalBodies>6</TotalBodies>
+      <TotalMale>3</TotalMale>
+      <TotalFemale>3</TotalFemale>
+      <TotalTeen>2</TotalTeen>
+      <TotalChild>1</TotalChild>
+      <TotalAdult>3</TotalAdult>
+      <TotalIdentified>3</TotalIdentified>
+      <TotalUnIdentified>3</TotalUnIdentified>
+      <Person>
+        <ID>1</ID>
+        <Name>John Lu</Name>
+        <Identified>true</Identified>
+        <Gender>Male</Gender>
+        <AgeBracket>Adult</AgeBracket>
+      </Person>
+      <Person>
+        <ID>2</ID>
+        <Name>NULL</Name>
+        <Identified>false</Identified>
+        <Gender>Female</Gender>
+        <AgeBracket>Adult</AgeBracket>
+      </Person>
+      <Person>
+        <ID>3</ID>
+        <Name>John Lu Jr</Name>
+        <Identified>true</Identified>
+        <Gender>Male</Gender>
+        <AgeBracket>Child</AgeBracket>
+      </Person>
+      <Person>
+        <ID>4</ID>
+        <Name>NULL</Name>
+        <Identified>false</Identified>
+        <Gender>Female</Gender>
+        <AgeBracket>Teen</AgeBracket>
+      </Person>
+      <Person>
+        <ID>5</ID>
+        <Name>Janet Lu</Name>
+        <Identified>true</Identified>
+        <Gender>Female</Gender>
+        <AgeBracket>Adult</AgeBracket>
+      </Person>
+      <Person>
+        <ID>6</ID>
+        <Name>NULL</Name>
+        <Identified>false</Identified>
+        <Gender>Male</Gender>
+        <AgeBracket>Teen</AgeBracket>
+      </Person>
+    </Morgue>
+    <Morgue>
+      <ID>4</ID>
+      <Name>Morgue 4</Name>
+      <ContactNumber>15</ContactNumber>
+      <Latitude>14.565558</Latitude>
+      <Longitude>121.019719</Longitude>
+      <TotalBodies>6</TotalBodies>
+      <TotalMale>3</TotalMale>
+      <TotalFemale>3</TotalFemale>
+      <TotalTeen>2</TotalTeen>
+      <TotalChild>1</TotalChild>
+      <TotalAdult>3</TotalAdult>
+      <TotalIdentified>0</TotalIdentified>
+      <TotalUnIdentified>6</TotalUnIdentified>
+      <Person>
+        <ID>1</ID>
+        <Name>John Hawk</Name>
+        <Identified>false</Identified>
+        <Gender>Male</Gender>
+        <AgeBracket>Adult</AgeBracket>
+      </Person>
+      <Person>
+        <ID>2</ID>
+        <Name>Jane Hawk</Name>
+        <Identified>false</Identified>
+        <Gender>Female</Gender>
+        <AgeBracket>Adult</AgeBracket>
+      </Person>
+      <Person>
+        <ID>3</ID>
+        <Name>John Hawk Jr</Name>
+        <Identified>false</Identified>
+        <Gender>Male</Gender>
+        <AgeBracket>Child</AgeBracket>
+      </Person>
+      <Person>
+        <ID>4</ID>
+        <Name>Mary Hawk Lu</Name>
+        <Identified>false</Identified>
+        <Gender>Female</Gender>
+        <AgeBracket>Teen</AgeBracket>
+      </Person>
+      <Person>
+        <ID>5</ID>
+        <Name>Janet Hawk</Name>
+        <Identified>false</Identified>
+        <Gender>Female</Gender>
+        <AgeBracket>Adult</AgeBracket>
+      </Person>
+      <Person>
+        <ID>6</ID>
+        <Name>James Hawk</Name>
+        <Identified>false</Identified>
+        <Gender>Male</Gender>
+        <AgeBracket>Teen</AgeBracket>
+      </Person>
+    </Morgue>
+  </ListOfMorgue>
+</Location>

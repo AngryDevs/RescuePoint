@@ -1,0 +1,76 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="RescuePoint.View.SearchPersonDetails"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        
+
+        <phone:Pivot HorizontalAlignment="Left" Height="748" Margin="10,10,0,0" Title="Rescue Point" VerticalAlignment="Top" Width="460">
+            <phone:PivotItem CacheMode="{x:Null}" Header="Details">
+                <Grid>
+                    <ScrollViewer Margin="0,0,0,0">                        
+                    <StackPanel Width="437">
+                        <TextBlock Name="lblName" FontFamily="Segoe WP" FontWeight="Normal"  FontSize="35">Name</TextBlock>
+                            <TextBlock Margin="10,0,0,0" Foreground="#d7d7d7" Name="txtName" FontFamily="Segoe WP" FontWeight="Thin"  FontSize="25"></TextBlock>
+
+                        <TextBlock Margin="0,10,0,0" Name="lblCNumber" FontFamily="Segoe WP" FontWeight="Normal"  FontSize="35">Contact Number</TextBlock>
+                            <TextBlock Margin="10,0,0,0" Foreground="#d7d7d7" Name="txtCnumber" FontFamily="Segoe WP" FontWeight="Thin"  FontSize="25"></TextBlock>
+
+                        <TextBlock Margin="0,10,0,0" Name="lblTotalBodies" FontFamily="Segoe WP" FontWeight="Normal"  FontSize="35">Total Bodies</TextBlock>
+                            <TextBlock Margin="10,0,0,0" Foreground="#d7d7d7" Name="txtTotalBodies" FontFamily="Segoe WP" FontWeight="Thin"  FontSize="25"></TextBlock>
+
+                        <TextBlock Foreground="#8c8c8c" Margin="15,10,0,0" Name="lblTotalMale" FontFamily="Segoe WP" FontWeight="Normal"  FontSize="30">Total Male</TextBlock>
+                            <TextBlock Foreground=" #464646" Margin="25,10,0,0" Name="txtTotalMale" FontFamily="Segoe WP" FontWeight="Thin"  FontSize="20"></TextBlock>
+
+                        <TextBlock Foreground="#8c8c8c" Margin="15,10,0,0" Name="lblTotalFemale" FontFamily="Segoe WP" FontWeight="Normal"  FontSize="30">Total Female</TextBlock>
+                            <TextBlock Foreground="#555555" Margin="25,10,0,0" Name="txtTotalFemale" FontFamily="Segoe WP" FontWeight="Thin"  FontSize="20"></TextBlock>
+
+                        <TextBlock Foreground="#8c8c8c" Margin="15,10,0,0" Name="lblTotalTeen" FontFamily="Segoe WP" FontWeight="Normal"  FontSize="30">Total Teen</TextBlock>
+                            <TextBlock Foreground="#555555" Margin="25,10,0,0" Name="txtTotalTeen" FontFamily="Segoe WP" FontWeight="Thin"  FontSize="20"></TextBlock>
+
+                        <TextBlock Foreground="#8c8c8c" Margin="15,10,0,0" Name="lblTotalChild" FontFamily="Segoe WP" FontWeight="Normal"  FontSize="30">Total Child</TextBlock>
+                            <TextBlock  Foreground="#555555" Margin="25,10,0,0" Name="txtTotalChild" FontFamily="Segoe WP" FontWeight="Thin"  FontSize="20"></TextBlock>
+
+                        <TextBlock Foreground="#8c8c8c"  Margin="15,10,0,0" Name="lblTotalAdult" FontFamily="Segoe WP" FontWeight="Normal"  FontSize="30">Total Adult</TextBlock>
+                            <TextBlock Foreground="#555555" Margin="25,10,0,0" Name="txtTotalAdult" FontFamily="Segoe WP" FontWeight="Thin"  FontSize="20"></TextBlock>
+
+                        <TextBlock Foreground="#8c8c8c" Margin="15,10,0,0" Name="lblTotalIdentified" FontFamily="Segoe WP" FontWeight="Normal"  FontSize="30">Total Identified</TextBlock>
+                            <TextBlock Foreground="#555555" Margin="25,10,0,0" Name="txtTotalIdentified" FontFamily="Segoe WP" FontWeight="Thin"  FontSize="20"></TextBlock>
+
+                        <TextBlock Foreground="#8c8c8c" Margin="15,10,0,0" Name="lblTotalUnidentified" FontFamily="Segoe WP" FontWeight="Normal"  FontSize="30">Total Unidentified</TextBlock>
+                            <TextBlock Foreground="#555555" Margin="25,10,0,0" Name="txtTotalUnidentified" FontFamily="Segoe WP" FontWeight="Thin"  FontSize="20"></TextBlock>
+                    </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </phone:PivotItem>
+            <phone:PivotItem CacheMode="{x:Null}" Header="Identified">
+                <Grid>
+                    <ListBox Name="Identified"/>
+                </Grid>
+            </phone:PivotItem>
+            <phone:PivotItem CacheMode="{x:Null}" Header="Unidentified">
+                <Grid>
+                    <TextBlock Name="txtUnidentified">"This feature is not yet available. :("</TextBlock>
+                </Grid>
+            </phone:PivotItem>
+            <phone:PivotItem CacheMode="{x:Null}" Header="Claimed">
+                <Grid>
+                    <TextBlock Name="txtClaimed">"This feature is not yet available. :(</TextBlock>
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>  
+    </Grid>
+
+</phone:PhoneApplicationPage>
