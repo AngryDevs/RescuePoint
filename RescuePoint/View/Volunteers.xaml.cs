@@ -67,7 +67,7 @@ namespace RescuePoint.View
                 geoCord = new GeoCoordinate(myLocation.Coordinate.Latitude, myLocation.Coordinate.Longitude);
 
                 MyMapControl.Center = geoCord;
-                AddPoint(MyMapControl, geoCord, "current");
+                AddPoint(MyMapControl, geoCord, "current", "current");
 
                 PopulatePOIs();
             }
@@ -104,7 +104,7 @@ namespace RescuePoint.View
                 var coor = new GeoCoordinate();
                 coor.Latitude = Convert.ToDouble(item.Latitude);
                 coor.Longitude = Convert.ToDouble(item.Longitude);
-                AddPoint(MyMapControl, coor, "evac");
+                AddPoint(MyMapControl, coor, "evac", item.Name);
             }
 
             DTOMorgue = parser.PopulateMorgue(XDoc);
@@ -114,7 +114,7 @@ namespace RescuePoint.View
                 var coor = new GeoCoordinate();
                 coor.Latitude = Convert.ToDouble(item.Latitude);
                 coor.Longitude = Convert.ToDouble(item.Longitude);
-                AddPoint(MyMapControl, coor, "morgue");
+                AddPoint(MyMapControl, coor, "morgue", item.Name);
             }
         }
 
@@ -184,7 +184,7 @@ namespace RescuePoint.View
             tempPoints.Add(coor);
         }
 
-        private void AddPoint(Map controlMap, GeoCoordinate geo, string type)
+        private void AddPoint(Map controlMap, GeoCoordinate geo, string type, string name)
         {
             MapLayer ml = new MapLayer();
             MapOverlay mo = new MapOverlay();
@@ -210,8 +210,11 @@ namespace RescuePoint.View
                     break;
             }
 
-            r.Width = r.Height = 12;
+            r.Width = r.Height = 20;
             r.Margin = new Thickness(-6, -6, 0, 0);
+            r.Name = name;
+            r.Tag = type;
+            r.DoubleTap += r_DoubleTap;
             mo.Content = r;
             mo.GeoCoordinate = geo;
             ml.Add(mo);
@@ -221,6 +224,43 @@ namespace RescuePoint.View
             tempPoints.Add(geo);
 
         }
+
+        void r_DoubleTap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            var el = (Ellipse)sender;
+            if (el.Name != "current")
+            {
+
+                GetDetails(el.Name, el.Tag.ToString());
+            }
+        }
+
+        void GetDetails(string name, string type)
+        {
+            try
+            {
+                if (type == "morgue")
+                {
+                    var o = DTOMorgue.Find(x => x.Name == name);
+                    PhoneApplicationService.Current.State["param"] = o;
+                    NavigationService.Navigate(new Uri("/View/SearchPersonDetails.xaml", UriKind.Relative));
+                }
+                else if (type == "evac")
+                {
+                    var o = DTOEvac.Find(x => x.Name == name);
+                    PhoneApplicationService.Current.State["param"] = o;
+                    NavigationService.Navigate(new Uri("/View/EvacuationDetails.xaml", UriKind.Relative));
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
 
         private void controlMap_Hold(object sender, System.Windows.Input.GestureEventArgs e)
         {

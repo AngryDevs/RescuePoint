@@ -31,13 +31,18 @@ namespace RescuePoint.View
             StringBuilder details = new StringBuilder();
             txtName.Text = dto.Name;
             txtCurrentPeople.Text = dto.CurrentPeople.ToString();
-            txtCurrentPeople.Text = dto.Medicine.ToString();
-            txtFood.Text = dto.Food.ToString();
-            txtWater.Text = dto.Water.ToString();
-            txtMedicine.Text = dto.Medicine.ToString();
-            StringBuilder person;
+            txtMaxPeople.Text = dto.MaxPeople.ToString();
+            txtFood.Text = string.Format("Good for {0} days", dto.Food.ToString());
+            txtWater.Text = string.Format("Good for {0} days", dto.Water.ToString());  
+            txtMedicine.Text = string.Format("Good for {0} days", dto.Medicine.ToString());  
+            //StringBuilder person;
 
 
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
 
         }
     }

@@ -61,3 +61,4 @@ C:\Users\AJ\Documents\GitHub\RescuePoint\RescuePoint\obj\Debug\RescuePoint.dll
 C:\Users\AJ\Documents\GitHub\RescuePoint\RescuePoint\obj\Debug\RescuePoint.pdb
 C:\Users\AJ\Documents\GitHub\RescuePoint\RescuePoint\obj\Debug\XapCacheFile.xml
 C:\Users\AJ\Documents\GitHub\RescuePoint\RescuePoint\obj\Debug\View\SearchPersonDetails.g.cs
+C:\Users\AJ\Documents\GitHub\RescuePoint\RescuePoint\obj\Debug\View\EvacuationDetails.g.cs

@@ -17,8 +17,8 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">         
     <Grid >
             <phone:Pivot HorizontalAlignment="Left" Height="748" Margin="10,10,0,0" Title="Evacuation Details" VerticalAlignment="Top" Width="460">
-            <phone:PivotItem Margin="12,-61,12,0">
-            <ScrollViewer Margin="0,0,0,0">
+            <phone:PivotItem Margin="12,30,12,0">
+            <ScrollViewer Margin="0,0,0,0" Height="561">
             <StackPanel  Width="437">
                 <!-- <TextBlock Foreground="#d7d7d7" Name="lblName" FontFamily="Segoe WP" FontWeight="Light"   FontSize="28">Name</TextBlock> -->
                 <TextBlock Margin="0,0,0,0" Foreground="#ededed" Name="txtName" FontFamily="Segoe WP" FontWeight="Thin"  FontSize="50"></TextBlock>                
@@ -41,6 +41,7 @@
         </ScrollViewer>
         </phone:PivotItem>
         </phone:Pivot>
+            <Button Content="Route" HorizontalAlignment="Left" Margin="29,672,0,0" VerticalAlignment="Top" Width="424" Click="Button_Click_1"/>
         </Grid>        
     </Grid>
 
