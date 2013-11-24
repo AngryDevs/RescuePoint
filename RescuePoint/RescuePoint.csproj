@@ -113,6 +113,9 @@
     <Compile Include="View\Donations.xaml.cs">
       <DependentUpon>Donations.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EvacuationDetails.xaml.cs">
+      <DependentUpon>EvacuationDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SearchPersonDetails.xaml.cs">
       <DependentUpon>SearchPersonDetails.xaml</DependentUpon>
     </Compile>
@@ -138,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Donations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EvacuationDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

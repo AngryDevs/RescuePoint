@@ -17,7 +17,7 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         
 
-        <phone:Pivot HorizontalAlignment="Left" Height="748" Margin="10,10,0,0" Title="Rescue Point" VerticalAlignment="Top" Width="460">
+        <phone:Pivot HorizontalAlignment="Left" Height="748" Margin="10,10,0,0" Title="Search Person Details" VerticalAlignment="Top" Width="460">
             <phone:PivotItem CacheMode="{x:Null}" Header="Details">
                 <Grid>
                     <ScrollViewer Margin="0,0,0,0">                        
