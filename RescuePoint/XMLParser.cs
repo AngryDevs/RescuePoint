@@ -82,16 +82,16 @@ public class XMLParser
                           TotalChilds = Convert.ToInt32(morgues.Element("TotalTeen").Value),
                           TotalAdults = Convert.ToInt32(morgues.Element("TotalAdult").Value),
                           TotalIdentified = Convert.ToInt32(morgues.Element("TotalIdentified").Value),
-                          TotalUnIdentified = Convert.ToInt32(morgues.Element("TotalUnIdentified").Value),
-                          PersonList = from person in morgues.Elements("Person")
-                                       select new
-                                       {
-                                           ID = Convert.ToInt32(person.Element("ID").Value),
-                                           Identified = Convert.ToBoolean(person.Element("Identified").Value),
-                                           Name = person.Element("Name").Value,
-                                           Gender = person.Element("Gender").Value,
-                                           AgeBracket = person.Element("AgeBracket").Value                                            
-                                       }
+                          TotalUnIdentified = Convert.ToInt32(morgues.Element("TotalUnIdentified").Value)
+                          //PersonList = from persons in morgues.Elements("Person"
+                          //             select new DTOPerson
+                          //             {
+                          //                 ID = Convert.ToInt32(persons.Element("ID").Value),
+                          //                 Identified = Convert.ToBoolean(persons.Element("Identified").Value),
+                          //                 Name = persons.Element("Name").Value,
+                          //                 Gender = persons.Element("Gender").Value,
+                          //                 AgeBracket = persons.Element("AgeBracket").Value
+                          //             }
                       };
 
         foreach (var morgue in Morgues)
@@ -112,37 +112,39 @@ public class XMLParser
                 TotalChilds = morgue.TotalChilds,
                 TotalIdentified = morgue.TotalIdentified,
                 TotalUnidentified = morgue.TotalUnIdentified,
-                PersonList = (DTOPersonList)morgue.PersonList
+                
             };
 
-             //DTOPersonList dtoPersonList = new DTOPersonList();
+             //dtoMorgue.PersonList = (DTOPersonList)morgue.PersonList;
 
-            //var Persons = from person in xDocument.Element("Location").Elements("ListOfMorgue").Elements("Morgue").Elements("Person")
-            //               select new
-            //               {
-            //                   ID = Convert.ToInt32(person.Element("ID").Value),
-            //                   Name = person.Element("Name").Value,
-            //                   Identified = Convert.ToBoolean(person.Element("Identified").Value),
-            //                   Gender = person.Element("Gender").Value,
-            //                   AgeBracket = person.Element("AgeBracket").Value
-                    
-            //               };
+             DTOPersonList dtoPersonList = new DTOPersonList();
 
-            //foreach (var person in Persons)
-            //{
-            //    DTOPerson dtoPerson = new DTOPerson
-            //    {
-            //         ID = person.ID,
-            //         Name = person.Name,
-            //         Gender = person.Gender,
-            //         AgeBracket = person.AgeBracket,
-            //         Identified = person.Identified
-            //    };
+             var Persons = from person in xDocument.Element("Location").Elements("ListOfMorgue").Elements("Morgue").Where(x => Convert.ToInt32(x.Element("ID").Value) == morgue.ID).Elements("Person")
+                           select new
+                           {
+                               ID = Convert.ToInt32(person.Element("ID").Value),
+                               Name = person.Element("Name").Value,
+                               Identified = Convert.ToBoolean(person.Element("Identified").Value),
+                               Gender = person.Element("Gender").Value,
+                               AgeBracket = person.Element("AgeBracket").Value
 
-            //    dtoPersonList.Add(dtoPerson);
-            //}
+                           };
+             
+             foreach (var person in Persons)
+             {
+                 DTOPerson dtoPerson = new DTOPerson
+                 {
+                     ID = person.ID,
+                     Name = person.Name,
+                     Gender = person.Gender,
+                     AgeBracket = person.AgeBracket,
+                     Identified = person.Identified
+                 };
 
-            //dtoMorgue.PersonList = dtoPersonList;
+                 dtoPersonList.Add(dtoPerson);
+             }
+
+             dtoMorgue.PersonList = dtoPersonList;
             dtoMorgueList.Add(dtoMorgue);
 
         }

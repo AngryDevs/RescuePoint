@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Text;
+using System.Windows.Media;
 
 namespace RescuePoint.View
 {
@@ -39,33 +40,87 @@ namespace RescuePoint.View
             txtTotalIdentified.Text = dto.TotalIdentified.ToString();
             txtTotalUnidentified.Text = dto.TotalUnidentified.ToString();
 
-
-            //details.AppendLine(string.Format("Name: {0}", dto.Name));
-           // details.AppendLine(string.Format("Contact Number: {0}", dto.ContactNumber));
-            //details.AppendLine(string.Format("Total Bodies: {0}", dto.TotalBodies));
-            //details.AppendLine(string.Format("Total Male: {0}", dto.TotalMales));
-           // details.AppendLine(string.Format("Total Female: {0}", dto.TotalFemales));
-            //details.AppendLine(string.Format("Total Teen: {0}", dto.TotalTeens));
-           // details.AppendLine(string.Format("Total Child: {0}", dto.TotalChilds));
-            //details.AppendLine(string.Format("Total Adult: {0}", dto.TotalAdults));
-           // details.AppendLine(string.Format("Total Identified: {0}", dto.TotalIdentified));
-           // details.AppendLine(string.Format("Total Unidentified: {0}", dto.TotalUnidentified));
-
-           // txtDetails.Text = details.ToString();
-
-            StringBuilder person;
-
             foreach (var item in dto.PersonList)
-	        {
-                person = new StringBuilder();
+            {
+                if (item.Identified)
+                {
 
-                person.AppendLine(string.Format("Name: {0}", item.Name));
-                person.AppendLine(string.Format("Gender: {0}", item.Gender));
-                person.AppendLine(string.Format("Age Bracket: {0}", item.AgeBracket));
-                Identified.Items.Add(person.ToString());
-		 
-	        }
-            
+                    var lblName = new TextBlock();
+                    var lblName2 = new TextBlock();
+                    var lblGender = new TextBlock();
+                    var lblGender2 = new TextBlock();
+                    var lblAge = new TextBlock();
+                    var lblAge2 = new TextBlock();
+
+                    lblName.FontFamily = new FontFamily("Segoe WP");
+                    lblName.FontWeight = FontWeights.Bold;
+                    lblName.Text = "Name: ";
+
+                    lblName2.FontFamily = new FontFamily("Segoe WP");
+                    lblName2.FontWeight = FontWeights.Thin;
+                    lblName2.Text = item.Name;
+
+                    lblGender.FontFamily = new FontFamily("Segoe WP");
+                    lblGender.FontWeight = FontWeights.Bold;
+                    lblGender.Text = "Gender: ";
+
+                    lblGender2.FontFamily = new FontFamily("Segoe WP");
+                    lblGender2.FontWeight = FontWeights.Thin;
+                    lblGender2.Text = item.Gender;
+
+                    lblAge.FontFamily = new FontFamily("Segoe WP");
+                    lblAge.FontWeight = FontWeights.Bold;
+                    lblAge.Text = "Age: ";
+
+                    lblAge2.FontFamily = new FontFamily("Segoe WP");
+                    lblAge2.FontWeight = FontWeights.Thin;
+                    lblAge2.Text = item.AgeBracket;
+                    lblAge2.Margin = new Thickness(0, 0, 0, 20);
+
+
+                    stackpanel.Children.Add(lblName);
+                    stackpanel.Children.Add(lblName2);
+
+                    stackpanel.Children.Add(lblGender);
+                    stackpanel.Children.Add(lblGender2);
+
+                    stackpanel.Children.Add(lblAge);
+                    stackpanel.Children.Add(lblAge2);
+
+                }
+                else
+                {
+                    var lblGender = new TextBlock();
+                    var lblGender2 = new TextBlock();
+                    var lblAge = new TextBlock();
+                    var lblAge2 = new TextBlock();
+
+                    lblGender.FontFamily = new FontFamily("Segoe WP");
+                    lblGender.FontWeight = FontWeights.Bold;
+                    lblGender.Text = "Gender: ";
+
+                    lblGender2.FontFamily = new FontFamily("Segoe WP");
+                    lblGender2.FontWeight = FontWeights.Thin;
+                    lblGender2.Text = item.Gender;
+
+                    lblAge.FontFamily = new FontFamily("Segoe WP");
+                    lblAge.FontWeight = FontWeights.Bold;
+                    lblAge.Text = "Age: ";
+
+                    lblAge2.FontFamily = new FontFamily("Segoe WP");
+                    lblAge2.FontWeight = FontWeights.Thin;
+                    lblAge2.Text = item.AgeBracket;
+                    lblAge2.Margin = new Thickness(0, 0, 0, 20);
+
+                    stackpanel2.Children.Add(lblGender);
+                    stackpanel2.Children.Add(lblGender2);
+
+                    stackpanel2.Children.Add(lblAge);
+                    stackpanel2.Children.Add(lblAge2);
+                }
+               
+            }
+
         }
 
 

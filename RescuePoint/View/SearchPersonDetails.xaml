@@ -56,13 +56,21 @@
                 </Grid>
             </phone:PivotItem>
             <phone:PivotItem CacheMode="{x:Null}" Header="Identified">
-                <Grid>
-                    <ListBox Name="Identified"/>
+                <Grid Name="IdentifiedGrid">
+                    <TextBlock />
+                    <ScrollViewer Margin="0,0,0,0">
+                        <StackPanel Width="437" Name="stackpanel">
+                        </StackPanel>
+                    </ScrollViewer>
                 </Grid>
             </phone:PivotItem>
             <phone:PivotItem CacheMode="{x:Null}" Header="Unidentified">
-                <Grid>
-                    <TextBlock Name="txtUnidentified">"This feature is not yet available. :("</TextBlock>
+                <Grid Name="UnidentifiedGrid">
+                    <TextBlock />
+                    <ScrollViewer Margin="0,0,0,0">
+                        <StackPanel Width="437" Name="stackpanel2">
+                        </StackPanel>
+                    </ScrollViewer>
                 </Grid>
             </phone:PivotItem>
             <phone:PivotItem CacheMode="{x:Null}" Header="Claimed">
