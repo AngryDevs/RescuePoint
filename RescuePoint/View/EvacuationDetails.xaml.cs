@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using System.Text;
+using System.Device.Location;
 
 namespace RescuePoint.View
 {
@@ -35,7 +36,7 @@ namespace RescuePoint.View
             txtFood.Text = string.Format("Good for {0} days", dto.Food.ToString());
             txtWater.Text = string.Format("Good for {0} days", dto.Water.ToString());  
             txtMedicine.Text = string.Format("Good for {0} days", dto.Medicine.ToString());  
-            //StringBuilder person;
+            
 
 
 
@@ -43,7 +44,12 @@ namespace RescuePoint.View
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            //GeoCoordinate coor = new GeoCoordinate();
+            //coor.Latitude = Convert.ToDouble(dto.Latitude);
+            //coor.Longitude = Convert.ToDouble(dto.Longitude);
 
+            PhoneApplicationService.Current.State["dto"] = dto;
+            NavigationService.Navigate(new Uri("/View/Donations.xaml", UriKind.Relative));
         }
     }
 }

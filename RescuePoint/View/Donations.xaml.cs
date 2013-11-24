@@ -35,22 +35,45 @@ namespace RescuePoint.View
         StringBuilder sb = new StringBuilder();
         List<double> DurationList = new List<double>();
         GeoCoordinate geoCord;
-
+        DTOEvacuation backDTO = new DTOEvacuation();
         bool isMappingRoute = false;
         bool isShortest = false;
         //int index = 0;
         DTOEvacuationList DTOEvac = new DTOEvacuationList();
-
+        bool isFresh = true;
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-            routeQuery.TravelMode = TravelMode.Driving;
-            routeQuery.QueryCompleted += routeQuery_QueryCompleted;
-            GetCurrentLocation();
-            MyMapControl.CartographicMode = MapCartographicMode.Road;
-            MyMapControl.LandmarksEnabled = true;
-            MyMapControl.ZoomLevel = 16;
+            try
+            {
+                backDTO = PhoneApplicationService.Current.State["dto"] as DTOEvacuation;
+                isFresh = false;
+                var coor = new GeoCoordinate();
+                coor.Latitude = Convert.ToDouble(backDTO.Latitude);
+                coor.Longitude = Convert.ToDouble(backDTO.Longitude);
+
+                routeQuery.TravelMode = TravelMode.Driving;
+                routeQuery.QueryCompleted += routeQuery_QueryCompleted;
+
+                AddPoint(MyMapControl, coor, "evac", backDTO.Name);
+                GetCurrentLocation();
+                
+                MyMapControl.CartographicMode = MapCartographicMode.Road;
+                MyMapControl.LandmarksEnabled = true;
+                MyMapControl.ZoomLevel = 16;
+                
+
+            }
+            catch
+            {
+                routeQuery.TravelMode = TravelMode.Driving;
+                routeQuery.QueryCompleted += routeQuery_QueryCompleted;
+                GetCurrentLocation();
+                MyMapControl.CartographicMode = MapCartographicMode.Road;
+                MyMapControl.LandmarksEnabled = true;
+                MyMapControl.ZoomLevel = 16;
+            }
 
         }
 
@@ -70,11 +93,65 @@ namespace RescuePoint.View
                 MyMapControl.Center = geoCord;
                 AddPoint(MyMapControl, geoCord, "current", "current");
 
-                PopulateEvac();
+                if (isFresh)
+                    PopulateEvac();
+                else
+                {
+                    MapRoute();
+                }
             }
             catch (Exception exception)
             {
                 throw exception;
+            }
+        }
+
+        void MapRoute()
+        {
+            if (geoCord != null)
+            {
+
+                tempPoints = new List<GeoCoordinate>();
+                tempPoints.Add(geoCord);
+
+                double shortestDistance = 0;
+
+                bool first = true;
+                DTOEvacuation shortEvac = new DTOEvacuation();
+
+                //foreach (var item in DTOEvac)
+                //{
+                //    var coor = new GeoCoordinate();
+                //    coor.Latitude = Convert.ToDouble(item.Latitude);
+                //    coor.Longitude = Convert.ToDouble(item.Longitude);
+
+
+                //    double distance = geoCord.GetDistanceTo(coor);
+                //    if (first || shortestDistance > distance)
+                //    {
+                //        shortestDistance = distance;
+                //        shortEvac = item;
+                //        first = false;
+                //    }
+
+                //}
+
+                tempPoints = new List<GeoCoordinate>();
+                tempPoints.Add(geoCord);
+                //GeoCoordinate evacCoor = new GeoCoordinate(Convert.ToDouble(shortEvac.Latitude), Convert.ToDouble(shortEvac.Longitude));
+
+                var coor = new GeoCoordinate();
+                coor.Latitude = Convert.ToDouble(backDTO.Latitude);
+                coor.Longitude = Convert.ToDouble(backDTO.Longitude);
+
+                tempPoints.Add(coor);
+
+                MappingRoute();
+
+            }
+            else
+            {
+
             }
         }
 
@@ -200,7 +277,7 @@ namespace RescuePoint.View
                 MapRoute MyMapRoute = new MapRoute(MyRoute);
 
                 MyMapControl.AddRoute(MyMapRoute);
-                MyMapControl.SetView(MyMapRoute.Route.BoundingBox);         
+                MyMapControl.SetView(MyMapRoute.Route.BoundingBox);
             }
 
             else
