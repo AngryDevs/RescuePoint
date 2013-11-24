@@ -13,33 +13,34 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
-    <!--LayoutRoot is the root grid where all page content is placed-->
+    
     <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="240*"/>
+        </Grid.ColumnDefinitions>
 
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="10,20,10,20" Grid.ColumnSpan="2">
+            <TextBlock Margin="10,0,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="Segoe WP Light" Foreground="#FFEBEBEB">
+        		<Run Text="RescuePoint"/>
+            </TextBlock>
 
+            <Image x:Name="imgBarUp" HorizontalAlignment="Left" Height="3" Margin="10,10,10,0" VerticalAlignment="Top" Width="436" Source="/Assets/bar.png"/>
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}" Margin="12,0"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+            <TextBlock Margin="10,0,10,0" Style="{StaticResource PhoneTextTitle1Style}" FontFamily="Segoe WP Light" FontSize="22" Foreground="#FF636363" >
+            	<Run Text="An integrated mapping application for disaster&#13;areas. Find the nearest evacuation centers; find&#13;missing people; donate to evacuation centers;  "/>
+            </TextBlock>
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
+            <Image x:Name="imgBarDown" HorizontalAlignment="Left" Height="3" Margin="10,10,10,0" VerticalAlignment="Top" Width="436" Source="/Assets/bar.png"/>                        
+       </StackPanel>
+       
+        <Grid Margin="10,260,10,10" Grid.ColumnSpan="2">
+            <Image x:Name="imgEvac" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="45,34,0,0"  Height="180" Width="180" Source="/Assets/2.png" Tap="imgEvac_Tap"/>
+            <Image x:Name="imgSearch" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,34,45,0"  Height="180" Width="180" Source="/Assets/1.png" Tap="imgSearch_Tap"/>
+            <Image x:Name="imgDonor" HorizontalAlignment="Center" VerticalAlignment="Top"  Margin="44,225,236,0"  Height="180" Width="180" Source="/Assets/4.png" Tap="imgDonor_Tap"/>
+            <Image x:Name="imgVol" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="235,225,45,0"  Height="180" Width="180" Source="/Assets/3.png" Tap="imgVol_Tap"/>
         </Grid>
-
-        <!--Uncomment to see an alignment grid to help ensure your controls are
-            aligned on common boundaries.  The image has a top margin of -32px to
-            account for the System Tray. Set this to 0 (or remove the margin altogether)
-            if the System Tray is hidden.
-
-            Before shipping remove this XAML and the image itself.-->
-        <!--<Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+        
     </Grid>
 
 </phone:PhoneApplicationPage>
